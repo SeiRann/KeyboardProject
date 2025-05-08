@@ -1,0 +1,45 @@
+meta:
+  engine: 4.1.0
+units:
+points:
+  zones:
+    matrix:
+      anchor:
+      columns:
+        extraFunction:
+        pinky:
+          key:
+            spread: 22
+        ring:
+        middle:
+        pointing:
+        extra:
+      rows:
+        extraFunction:
+        first:
+        second:
+          padding: 25
+        third:
+    matrix_right:
+      anchor:
+        shift: [120,0]
+      columns:
+        pointing:
+        middle:
+        ring:
+        pinky:
+        extra:
+        extraFunctions.key:
+          spread: 22
+      rows:
+        first:
+        second:
+        third:
+          padding: 25
+        extraFunction:
+
+      
+          
+outlines:
+pcbs:
+cases:
