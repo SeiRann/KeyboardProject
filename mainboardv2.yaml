@@ -54,51 +54,64 @@ points:
               shift: [-19,-19]
             second:
               shift: [19, -19]       
-      mirror:
-        distance: 280
+  mirror: 150 
 outlines:
-  keysOutline:
+  _keysOutline:
     - what: polygon
       points:
         - ref: matrix_first_first
-          shift: [-9,-9]
+          shift: [-10,-10]
         - ref: matrix_first_forth
-          shift: [-9,9]
+          shift: [-10,10]
         - ref: matrix_sixth_third
-          shift: [9,9]
+          shift: [10,10]
         - ref: matrix_sixth_first
-          shift: [9,-9]
+          shift: [10,-10]
         - ref: matrix_forth_first
-          shift: [75/2, 9+1]
+          shift: [75/2+1, 8+1]
         - ref: matrix_seventh_second
-          shift: [9,-9]
+          shift: [10,-10]
         - ref: matrix_seventh_first
-          shift: [-9,-9]
+          shift: [-10,-10]
         - ref: matrix_forth_first
-          shift: [0.5,-10]
+          shift: [-0.5,-11]
+      fillet: 2
+  _keysOutline_mirror:
+    - what: polygon
+      points:
+        - ref: mirror_matrix_first_first
+          shift: [-10,-10]
+        - ref: mirror_matrix_first_forth
+          shift: [-10,10]
+        - ref: mirror_matrix_sixth_third
+          shift: [10,10]
+        - ref: mirror_matrix_sixth_first
+          shift: [10,-10]
+        - ref: mirror_matrix_forth_first
+          shift: [75/2+1, 8+1]
+        - ref: mirror_matrix_seventh_second
+          shift: [10,-10]
+        - ref: mirror_matrix_seventh_first
+          shift: [-10,-10]
+        - ref: mirror_matrix_forth_first
+          shift: [-0.5,-11]
+      fillet: 2
   keysLayout:
     - what: rectangle
       size: 18
       where: true
       asym: both
-  test1:
+  raw:
     - what: outline
-      name: keysOutline
-  test:
+      name: _keysOutline_mirror
     - what: outline
-      name: test1 
+      name: _keysOutline
+      operation: stack
+  pcbOutline:
+    - what: outline
+      name: raw
     - what: outline
       name: keysLayout
       operation: stack
-      
-  
-     
-
-
-      
-
-    
-    
-
 pcbs:
 cases:
