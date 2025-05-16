@@ -1,45 +1,132 @@
 meta:
-  engine: 4.1.0
+  engine: 4.0.4
 units:
 points:
   zones:
-    matrix:
-      anchor:
-      columns:
-        extraFunction:
-        pinky:
-          key:
-            spread: 22
-        ring:
-        middle:
-        pointing:
-        extra:
-      rows:
-        extraFunction:
-        first:
-        second:
-          padding: 25
-        third:
-    matrix_right:
-      anchor:
-        shift: [120,0]
-      columns:
-        pointing:
-        middle:
-        ring:
-        pinky:
-        extra:
-        extraFunctions.key:
-          spread: 22
-      rows:
-        first:
-        second:
-        third:
-          padding: 25
-        extraFunction:
 
-      
-          
+    matrix:
+      key:
+        bind: $default_autobind
+      anchor:
+      columns:
+        first:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        second:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        third:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        forth:
+          rows:
+            first:
+              width: 75
+              shift: [28.5,0]
+            second:
+              shift: [-28.5]
+            third:
+            forth:
+        fifth:
+          rows:
+            first:
+              shift: [0,19]
+            second:
+            third:
+        sixth:
+          rows:
+            first:
+              shift: [0,19]
+            second:
+            third:
+        seventh:
+          rows:
+            first:
+              shift: [-19,-19]
+            second:
+              shift: [19, -19]       
+  mirror: 150 
 outlines:
+  _keysOutline:
+    - what: polygon
+      points:
+        - ref: matrix_first_first
+          shift: [-10,-10]
+        - ref: matrix_first_forth
+          shift: [-10,10]
+        - ref: matrix_sixth_third
+          shift: [10,10]
+        - ref: matrix_sixth_first
+          shift: [10,-10]
+        - ref: matrix_forth_first
+          shift: [75/2+1, 8+1]
+        - ref: matrix_seventh_second
+          shift: [10,-10]
+        - ref: matrix_seventh_first
+          shift: [-10,-10]
+        - ref: matrix_forth_first
+          shift: [-0.5,-11]
+      fillet: 2
+  _keysOutline_mirror:
+    - what: polygon
+      points:
+        - ref: mirror_matrix_first_first
+          shift: [-10,-10]
+        - ref: mirror_matrix_first_forth
+          shift: [-10,10]
+        - ref: mirror_matrix_sixth_third
+          shift: [10,10]
+        - ref: mirror_matrix_sixth_first
+          shift: [10,-10]
+        - ref: mirror_matrix_forth_first
+          shift: [75/2+1, 8+1]
+        - ref: mirror_matrix_seventh_second
+          shift: [10,-10]
+        - ref: mirror_matrix_seventh_first
+          shift: [-10,-10]
+        - ref: mirror_matrix_forth_first
+          shift: [-0.5,-11]
+      fillet: 2
+  keysLayout:
+    - what: rectangle
+      size: 18
+      where: true
+      asym: both
+  raw:
+    - what: outline
+      name: _keysOutline_mirror
+    - what: outline
+      name: _keysOutline
+      operation: stack
+  pcbOutline:
+    - what: outline
+      name: raw
+    - what: outline
+      name: keysLayout
+      operation: stack
 pcbs:
+  keys:
+    outlines:
+      - outline : pcbOutline
+    footprints:
+      keyswitches:
+        where: true
+        what: mx
+        params:
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      nicenano:
+        what: nicenano
+        params:
+          orientation: up
 cases:

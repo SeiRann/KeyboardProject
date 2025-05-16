@@ -114,4 +114,24 @@ outlines:
       name: keysLayout
       operation: stack
 pcbs:
+  keys:
+    outlines:
+      - outline : pcbOutline
+    footprints:
+      keyswitches:
+        where: true
+        what: mx
+        params:
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      nice_nano:
+        what: nice_nano
+        adjust:
+          rotate: -180
+        params:
+          orientation: up
+        where:
+          ref: matrix_sixth_third
+          shift: [-9,2]
 cases:
