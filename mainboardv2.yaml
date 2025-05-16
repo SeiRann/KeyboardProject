@@ -1,0 +1,104 @@
+meta:
+  engine: 4.0.4
+units:
+points:
+  zones:
+
+    matrix:
+      key:
+        bind: $default_autobind
+      anchor:
+      columns:
+        first:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        second:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        third:
+          rows:
+            first:
+            second:
+            third:
+            forth:
+        forth:
+          rows:
+            first:
+              width: 75
+              shift: [28.5,0]
+            second:
+              shift: [-28.5]
+            third:
+            forth:
+        fifth:
+          rows:
+            first:
+              shift: [0,19]
+            second:
+            third:
+        sixth:
+          rows:
+            first:
+              shift: [0,19]
+            second:
+            third:
+        seventh:
+          rows:
+            first:
+              shift: [-19,-19]
+            second:
+              shift: [19, -19]       
+      mirror:
+        distance: 280
+outlines:
+  keysOutline:
+    - what: polygon
+      points:
+        - ref: matrix_first_first
+          shift: [-9,-9]
+        - ref: matrix_first_forth
+          shift: [-9,9]
+        - ref: matrix_sixth_third
+          shift: [9,9]
+        - ref: matrix_sixth_first
+          shift: [9,-9]
+        - ref: matrix_forth_first
+          shift: [75/2, 9+1]
+        - ref: matrix_seventh_second
+          shift: [9,-9]
+        - ref: matrix_seventh_first
+          shift: [-9,-9]
+        - ref: matrix_forth_first
+          shift: [0.5,-10]
+  keysLayout:
+    - what: rectangle
+      size: 18
+      where: true
+      asym: both
+  test1:
+    - what: outline
+      name: keysOutline
+  test:
+    - what: outline
+      name: test1 
+    - what: outline
+      name: keysLayout
+      operation: stack
+      
+  
+     
+
+
+      
+
+    
+    
+
+pcbs:
+cases:
