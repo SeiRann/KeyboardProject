@@ -221,6 +221,15 @@ pcbs:
     outlines:
       - outline : pcbOutline_right
     footprints:
+      diodes:
+        what: diode
+        where: true
+        params:
+            from: "{{column_net}}"
+            to: "{{row_net}}"
+        adjust:
+            shift: [0,-5]
+            rotate: 180
       keyswitches:
         where: true
         what: mx
