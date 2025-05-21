@@ -274,7 +274,10 @@ pcbs:
       keyswitches:
         where: true
         what: mx
+        asym: clone
         params:
+          reverse: false
+          keycaps: true
           hotswap: true
           from: "{{column_net}}"
           to: "{{row_net}}"
