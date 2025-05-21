@@ -179,6 +179,13 @@ pcbs:
     outlines:
       - outline : pcbOutline_left
     footprints:
+      batteryConnector:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref: matrix_forth_first
+        adjust:
+          shift: [-16,0]
+          rotate: -90
       resetButton:
         what: ceoloide/reset_switch_smd_side
         where:
@@ -234,6 +241,13 @@ pcbs:
     outlines:
       - outline : pcbOutline_right
     footprints:
+      batteryConnector:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref: mirror_matrix_forth_first
+        adjust:
+          shift: [-16,0]
+          rotate: -90
       resetButton:
         what: ceoloide/reset_switch_smd_side
         where:
