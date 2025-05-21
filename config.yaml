@@ -139,13 +139,24 @@ pcbs:
           hotswap: true
           from: "{{colrow}}"
           to: "{{col_net}}"
-      nice_nano:
-        what: nice_nano
+      mcu:
+        what: ceoloide/mcu_nice_nano
         adjust:
-          rotate: -180
+          rotate: -90
         params:
-          orientation: up
+            P2: C1
+            P3: C2
+            P4: C3 
+            P5: C4
+            P6: C5
+            P7: C6
+            
+            P21: R1
+            P20: R2
+            P19: R3
+            P18: R4
+
         where:
           ref: matrix_forth_first
-          shift: [19.5,0]
+          shift: [20.5,0]
 cases:
