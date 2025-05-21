@@ -179,12 +179,19 @@ pcbs:
     outlines:
       - outline : pcbOutline_left
     footprints:
+      resetButton:
+        what: ceoloide/reset_switch_smd_side
+        where:
+            ref: matrix_seventh_second
+        adjust:
+            shift: [8, 10]
+            rotate: -90
       switch:
         what: ceoloide/power_switch_smd_side
         where: 
             ref: matrix_seventh_second
         adjust:
-            shift: [9,-3.25]
+            shift: [8.50,-3]
       diodes:
         what: diode
         where: true
@@ -227,12 +234,19 @@ pcbs:
     outlines:
       - outline : pcbOutline_right
     footprints:
+      resetButton:
+        what: ceoloide/reset_switch_smd_side
+        where:
+            ref: mirror_matrix_seventh_second
+        adjust:
+            shift: [8, 10]
+            rotate: -90
       switch:
         what: ceoloide/power_switch_smd_side
         where: 
             ref: mirror_matrix_seventh_second
         adjust:
-            shift: [9,-3.25]
+            shift: [8.50,-3]
             rotate: 180
       diodes:
         what: diode
