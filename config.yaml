@@ -3,7 +3,6 @@ meta:
 units:
 points:
   zones:
-
     matrix:
       key:
         bind: $default_autobind
@@ -12,62 +11,96 @@ points:
         first:
           rows:
             first:
-              column_net:
+              column_net: C6
+              row_net: R1
             second:
-              column_net:
+              column_net: C6
+              row_net: R2
             third:
-              column_net:
+              column_net: C6
+              row_net: R3
             forth:
-              column_net:
+              column_net: C6
+              row_net: R4
         second:
           rows:
             first:
-              column_net:
+              column_net: C5
+              row_net: R1
             second:
-              column_net:
+              column_net: C5
+              row_net: R2
             third:
-              column_net:
+              column_net: C5
+              row_net: R3
             forth:
-              column_net:
+              column_net: C5
+              row_net: R4
         third:
           rows:
             first:
-              column_net:
+              column_net: C4
+              row_net: R1
             second:
-              column_net:
+              column_net: C4
+              row_net: R2
             third:
-              column_net:
+              column_net: C4
+              row_net: R3
             forth:
-              column_net:
+              column_net: C4
+              row_net: R4
         forth:
           rows:
             first:
+              column_net: C3
+              row_net: R1
               width: 75
               shift: [28.5,0]
             second:
+              column_net: C3
+              row_net: R2
               shift: [-28.5]
             third:
+              column_net: C3
+              row_net: R3
             forth:
+              column_net: C3
+              row_net: R4
         fifth:
           rows:
             first:
+              column_net: C2
+              row_net: R2
               shift: [0,19]
-            second:
+            second: 
+              column_net: C2
+              row_net: R3
             third:
+              column_net: C2
+              row_net: R4
         sixth:
           rows:
             first:
+              column_net: C1
+              row_net: R2
               shift: [0,19]
             second:
+              column_net: C1
+              row_net: R3
             third:
+              column_net: C1
+              row_net: R4
         seventh:
           rows:
             first:
+              column_net: C2
+              row_net: R1
               shift: [-19,-19]
-              column_net: P031
             second:
+              column_net: C1
+              row_net: R1
               shift: [19, -19]    
-              column_net: P029   
   mirror: 150 
 outlines:
   _keysOutline:
@@ -136,28 +169,35 @@ outlines:
   pcbOutline_left:
     - what: outline
       name: _keysOutline
-    - what: outline
-      name: keysLayout_left
       operation: stack
   pcbOutline_right:
     - what: outline
       name: _keysOutline_mirror
-    - what: outline
-      name: keysLayout_right
       operation: stack
 pcbs:
   pcb_left:
     outlines:
       - outline : pcbOutline_left
     footprints:
+      diodes:
+        what: diode
+        where: true
+        params:
+            from: "{{column_net}}"
+            to: "{{row_net}}"
+        adjust:
+            shift: [0, -5]
+            rotate: 180
       keyswitches:
         where: true
         asym: source
         what: mx
         params:
+          reverse: false
+          keycaps: true
           hotswap: true
-          from: "{{colrow}}"
-          to: "{{col_net}}"
+          from: "{{column_net}}"
+          to: "{{row_net}}"
       mcu:
         what: ceoloide/mcu_nice_nano
         adjust:
@@ -186,8 +226,8 @@ pcbs:
         what: mx
         params:
           hotswap: true
-          from: "{{colrow}}"
-          to: "{{col_net}}"
+          from: "{{column_net}}"
+          to: "{{row_net}}"
       mcu:
         what: ceoloide/mcu_nice_nano
         adjust:
