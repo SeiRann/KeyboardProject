@@ -12,21 +12,33 @@ points:
         first:
           rows:
             first:
+              column_net:
             second:
+              column_net:
             third:
+              column_net:
             forth:
+              column_net:
         second:
           rows:
             first:
+              column_net:
             second:
+              column_net:
             third:
+              column_net:
             forth:
+              column_net:
         third:
           rows:
             first:
+              column_net:
             second:
+              column_net:
             third:
+              column_net:
             forth:
+              column_net:
         forth:
           rows:
             first:
@@ -52,8 +64,10 @@ points:
           rows:
             first:
               shift: [-19,-19]
+              column_net: P031
             second:
-              shift: [19, -19]       
+              shift: [19, -19]    
+              column_net: P029   
   mirror: 150 
 outlines:
   _keysOutline:
@@ -123,8 +137,8 @@ pcbs:
         what: mx
         params:
           hotswap: true
-          from: "{{col_net}}"
-          to: "{{colrow}}"
+          from: "{{colrow}}"
+          to: "{{col_net}}"
       nice_nano:
         what: nice_nano
         adjust:
@@ -132,6 +146,6 @@ pcbs:
         params:
           orientation: up
         where:
-          ref: matrix_sixth_third
-          shift: [-9,2]
+          ref: matrix_forth_first
+          shift: [19.5,0]
 cases:
