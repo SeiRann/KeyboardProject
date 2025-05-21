@@ -179,6 +179,12 @@ pcbs:
     outlines:
       - outline : pcbOutline_left
     footprints:
+      switch:
+        what: ceoloide/power_switch_smd_side
+        where: 
+            ref: matrix_seventh_second
+        adjust:
+            shift: [9,-3.25]
       diodes:
         what: diode
         where: true
@@ -221,6 +227,13 @@ pcbs:
     outlines:
       - outline : pcbOutline_right
     footprints:
+      switch:
+        what: ceoloide/power_switch_smd_side
+        where: 
+            ref: mirror_matrix_seventh_second
+        adjust:
+            shift: [9,-3.25]
+            rotate: 180
       diodes:
         what: diode
         where: true
